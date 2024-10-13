@@ -13,20 +13,58 @@
 .contact .field {
   margin-bottom: 1.5rem;
 }
+.contact-form-wrapper .field:before, .contact-form-wrapper .field:after { display: none; }
+.contact-form-wrapper .field__input, 
+.contact-form-wrapper .select__select, 
+.contact-form-wrapper .customer .field input, 
+.contact-form-wrapper .customer select {
+    border: 1px solid;  
+    border-radius: 10px !important;    
+    height: 54px !important;
+    box-shadow: unset !important;
+}
+#ContactForm-body {
+    min-height: 219px;
+}
+#ContactForm-body+.field__label {
+    top: 25px !important;
+}
+#ContactForm-body:focus~.field__label {
+    top: 5px !important;
+}
+.contact-form-wrapper .field__label, .contact-form-wrapper .customer .field label {
+    font-size: 20px;
+    line-height: 24px !important;
+    letter-spacing: 0px !important;
+    left: 34px;
+    top: 16px;
+}
+.contact-form-wrapper .image-item { display: none; }
 
 @media screen and (min-width: 750px) {
   .contact .field {
-    margin-bottom: 2rem;
+    margin-bottom: 0.8rem;
   }
+  .contact-form-wrapper .image-item { display: block; }
 }
 
 .contact__button {
-  margin-top: 3rem;
+  margin-top: 6px;
 }
 
 @media screen and (min-width: 750px) {
   .contact__button {
-    margin-top: 4rem;
+    margin-top: 1rem;
+  }
+  .contact__button button {
+      min-height: 66px;
+      font-size: 25px;
+      line-height: 24px;
+      letter-spacing: 0px !important;
+  }
+  .contact__button button .svg-wrapper{
+      width: 50px;
+      height: 30px;    
   }
 }
 
@@ -36,4 +74,35 @@
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 2rem;
   }
+}
+
+@media screen and (max-width: 749px) {
+  .contact .field {
+      margin-bottom: 0.5rem;
+  }  
+  .contact-form-wrapper .field__input, .contact-form-wrapper .select__select, .contact-form-wrapper .customer .field input, .contact-form-wrapper .customer select {
+      border: 0.7px solid;
+      border-radius: 7px !important;
+      height: 39px !important;
+  }  
+  .contact-form-wrapper .field__label {
+      font-size: 16px;
+      line-height: 17px !important;
+      left: 23px;
+      top: 14px;    
+  }
+  #ContactForm-body+.field__label {
+      top: 17px !important;
+  } 
+  #ContactForm-body {
+      min-height: 154px;
+  }
+  .contact__button button .svg-wrapper{
+      width: 35px;
+  }
+  .contact__button button {
+      font-size: 20px;
+      line-height: 17px;
+      min-height: calc(4.4rem + var(--buttons-border-width)* 2);
+  }  
 }
